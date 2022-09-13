@@ -26,6 +26,7 @@ labs(
   title = "Population Density of Counties"
 )
 ```
+
 This histogram is right skewed. It looks like there is an outlier in between x=7500 and x = 100000
 
 ## Exercise 2
@@ -33,12 +34,20 @@ This histogram is right skewed. It looks like there is an outlier in between x=7
 ```{r ex-2}
 ggplot(data = midwest, 
        mapping = aes(x = percollege, y = percbelowpoverty, color = state)) +
-  geom_point() 
+  geom_point()+
+  labs(
+  x = "Percentage of People with a College Degree",
+  y = "Percentage Below Poverty",
+  title = "Percentage of People with a College Degree vs 
+  Percentage of People Below Poverty by State", 
+  color = "Midwestern States"
+)+
+  scale_color_viridis_d()
 ```
 
 ## Exercise 3
 
-(Type your answer to Exercise 3 here. Add code chunks as needed. Don't forget to label your code chunk. Do not use spaces in code chunk labels.)
+This is a general trend among the states included in the dataset that those below the poverty line are less likely to obtain a college degree. 
 
 ## Exercise 4
 
