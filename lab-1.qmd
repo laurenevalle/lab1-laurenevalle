@@ -50,6 +50,21 @@ ggplot(data = midwest,
 This is a general trend among the states included in the dataset that those below the poverty line are less likely to obtain a college degree. 
 
 ## Exercise 4
+```{r ex-4}
+ggplot(data = midwest, 
+       mapping = aes(x = percollege, y = percbelowpoverty, color = state)) +
+  geom_smooth(se = FALSE)+
+  geom_point(alpha = 0.5)+
+  labs(
+  x = "Percentage of People with a College Degree",
+  y = "Percentage Below Poverty",
+  title = "Percentage of People with a College Degree vs 
+  Percentage of People Below Poverty by State", 
+  color = "Midwestern States"
+)+
+  facet_wrap("state")
+
+```
 
 ## Exercise 5
 
