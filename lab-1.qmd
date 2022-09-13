@@ -67,7 +67,41 @@ ggplot(data = midwest,
 ```
 
 ## Exercise 5
+```{r ex-5}
+ggplot(data = midwest, 
+       mapping = aes(x = state, y = area, color = state)) +
+  geom_boxplot()
+```
+From this side by side box plot we can see that Michigan has the largest single county (as show by the single green dot much higher than the rest of the data set). I also notice that Michigan and Wisconsin tend to have counties larger in area while Indiana and Ohio tend to have counties that are on the smaller side (in comparison).
 
 ## Exercise 6
+```{r ex-6}
+midwest <- midwest |>
+  mutate(metro = if_else(inmetro == 1, "Yes", "No"))
+  ggplot(data = midwest, mapping = aes(x = state, fill = metro))+
+  geom_bar(position = "fill")+
+    labs(
+      x = "State",
+      y = "Percent of Counties",
+      title = "States vs Percentage of Counties with Metro Areas", 
+      color = "Metro"
+)
+```
+Ohio has the highest percent of counties located in a metropolitan area (in this dataset) and Wisonsin and Illinois are tied for the least percent (in this dataset)
 
 ## Exercise 7
+```{r ex-7}
+ggplot(data = midwest, 
+       mapping = aes(x = percollege, y = popdensity, color = percbelowpoverty)) +
+  geom_point(size = 2, alpha = 0.5)+
+  facet_wrap(~state)+
+  labs(
+  x = "Percent College Educated",
+  y = "Population Density (person/unit area)",
+  title = "Do People with College Degrees Live in Denser Areas?", 
+  color = "% below \npoverty line")+
+    theme_minimal()
+  
+
+```
+
