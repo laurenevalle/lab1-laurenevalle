@@ -107,6 +107,5 @@ ggplot(data = midwest,
   title = "Do People with College Degrees Live in Denser Areas?", 
   color = "% below \npoverty line")+
     theme_minimal()
-  
 
 ```
