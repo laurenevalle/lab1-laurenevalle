@@ -47,9 +47,10 @@ ggplot(data = midwest,
 
 ## Exercise 3
 
-This is a general trend among the states included in the dataset that those below the poverty line are less likely to obtain a college degree. 
+This is a general trend among the states included in the dataset that those below the poverty line are less likely to obtain a college degree.
 
 ## Exercise 4
+
 ```{r ex-4}
 ggplot(data = midwest, 
        mapping = aes(x = percollege, y = percbelowpoverty, color = state)) +
@@ -67,14 +68,17 @@ ggplot(data = midwest,
 ```
 
 ## Exercise 5
+
 ```{r ex-5}
 ggplot(data = midwest, 
        mapping = aes(x = state, y = area, color = state)) +
   geom_boxplot()
 ```
+
 From this side by side box plot we can see that Michigan has the largest single county (as show by the single green dot much higher than the rest of the data set). I also notice that Michigan and Wisconsin tend to have counties larger in area while Indiana and Ohio tend to have counties that are on the smaller side (in comparison).
 
 ## Exercise 6
+
 ```{r ex-6}
 midwest <- midwest |>
   mutate(metro = if_else(inmetro == 1, "Yes", "No"))
@@ -87,9 +91,11 @@ midwest <- midwest |>
       color = "Metro"
 )
 ```
+
 Ohio has the highest percent of counties located in a metropolitan area (in this dataset) and Wisonsin and Illinois are tied for the least percent (in this dataset)
 
 ## Exercise 7
+
 ```{r ex-7}
 ggplot(data = midwest, 
        mapping = aes(x = percollege, y = popdensity, color = percbelowpoverty)) +
@@ -104,4 +110,3 @@ ggplot(data = midwest,
   
 
 ```
-
